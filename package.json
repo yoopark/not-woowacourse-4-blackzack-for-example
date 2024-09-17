@@ -1,0 +1,30 @@
+{
+  "name": "4-blackzack",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "start": "node dist/main.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/not-woowacourse/4-blackzack.git"
+  },
+  "author": "Yongjun Park <yopark.dev@gmail.com> (https://yopark.dev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/not-woowacourse/4-blackzack/issues"
+  },
+  "homepage": "https://github.com/not-woowacourse/4-blackzack#readme",
+  "dependencies": {
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
+  }
+}
