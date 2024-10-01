@@ -39,7 +39,7 @@ class BlackjackController {
 
     const dealerCards = deckManager.drawMultiple(2);
     dealer.addCards(dealerCards);
-    OutputView.printDealerRevealCards(dealerCards);
+    OutputView.printDealerReceiveCards(dealerCards);
 
     // Phase 3. 플레이어 동작
     while (player.checkCanDraw()) {
@@ -56,13 +56,13 @@ class BlackjackController {
 
     if (player.checkIsBust()) {
       OutputView.printPlayerBust();
+      OutputView.printPlayerResult('lose');
       return 'lose';
     }
 
     OutputView.printSumOfPlayerCards(player.score);
 
     // Phase 4. 딜러 동작
-    OutputView.printDealerRevealRemainingCard();
 
     // while (true) ???
     while (true) {
@@ -81,6 +81,7 @@ class BlackjackController {
 
     if (dealer.checkIsBust()) {
       OutputView.printDealerBust();
+      OutputView.printPlayerResult('win');
       return 'win';
     }
 

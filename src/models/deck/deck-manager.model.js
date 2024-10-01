@@ -1,5 +1,5 @@
+import { BlackzackDeckGenerator } from '@/lib/utils/blackzack-deck-generator';
 import { Card } from '@/models/card/card.model';
-import { shuffle } from 'es-toolkit';
 
 class DeckManager {
   #deck;
@@ -9,31 +9,13 @@ class DeckManager {
   }
 
   #generateNewDeck() {
-    const suits = ['♠', '♣', '♥', '♦'];
-    const ranks = [
-      'A',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-      '8',
-      '9',
-      '10',
-      'J',
-      'Q',
-      'K',
-    ];
+    const newBlackzackDeck = BlackzackDeckGenerator.generateNewBlackzackDeck();
 
-    const newDeck = suits
-      .flatMap((suit) => ranks.map((rank) => ({ suit, rank })))
-      .map(({ suit, rank }) => new Card(rank, suit));
+    return this.#convertBlackzeckDeckToDeck(newBlackzackDeck);
+  }
 
-    // shuffle 하는 건 메소드 바깥으로 빼야 할까 ..?
-    const shuffledNewDeck = shuffle(newDeck);
-
-    return shuffledNewDeck;
+  #convertBlackzeckDeckToDeck(blackzackDeck) {
+    return blackzackDeck.map(({ suit, rank }) => new Card(rank, suit));
   }
 
   draw() {
