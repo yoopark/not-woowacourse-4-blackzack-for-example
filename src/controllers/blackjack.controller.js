@@ -65,7 +65,7 @@ class BlackjackController {
     // Phase 4. 딜러 동작
 
     // while (true) ???
-    while (true) {
+    while (!dealer.checkIsBust()) {
       const wantsToDraw = dealer.checkCanDraw(); // 딜러가 히트하였습니다 / 딜러가 스탠드하였습니다 띄우려면 ... 이게 최선인가?
 
       if (!wantsToDraw) {
