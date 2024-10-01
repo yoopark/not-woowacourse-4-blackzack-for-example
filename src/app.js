@@ -1,6 +1,14 @@
+import { BlackjackController } from '@/controllers/blackjack.controller';
+
 class App {
+  #blackjackController;
+
+  constructor() {
+    this.#blackjackController = new BlackjackController();
+  }
+
   async play() {
-    /* write your code here */
+    await this.#blackjackController.run();
   }
 }
 
