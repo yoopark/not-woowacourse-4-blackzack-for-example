@@ -18,14 +18,29 @@ const RANKS = Object.freeze([
 ]);
 
 class BlackzackDeckGenerator {
+  static #getBlackzackDeck() {
+    return SUITS.flatMap((suit) => RANKS.map((rank) => ({ suit, rank })));
+  }
+
   static generateNewBlackzackDeck() {
-    const newBlackzackDeck = SUITS.flatMap((suit) =>
-      RANKS.map((rank) => ({ suit, rank })),
-    );
+    const newBlackzackDeck = this.#getBlackzackDeck();
 
     const shuffledNewBlackzackDeck = shuffle(newBlackzackDeck);
 
     return shuffledNewBlackzackDeck;
+  }
+
+  /**
+   * 1덱이 아닌 여러 덱으로 플레이하고 싶은 경우 사용합니다.
+   */
+  static generateNewBlackzackDeckMultiple(count) {
+    const newBlackzackDecks = Array.from({ length: count }, () =>
+      this.#getBlackzackDeck(),
+    );
+
+    const shuffledNewBlackzackDeckMultiple = shuffle(newBlackzackDecks.flat());
+
+    return shuffledNewBlackzackDeckMultiple;
   }
 }
 
