@@ -1,6 +1,6 @@
 # 구현과제 4. Blackzack
 
-> 이 과제는 [우아한테크코스 웹 프론트엔드 프리코스 미션 - 숫자 야구](https://github.com/woowacourse-precourse/javascript-baseball-6), [우아한테크코스 백엔드 미션 - 블랙잭](https://github.com/woowacourse/java-blackjack)를 모티브로 제작되었습니다.
+> 이 과제는 [우아한테크코스 웹 프론트엔드 프리코스 미션 - 숫자 야구](https://github.com/woowacourse-precourse/javascript-baseball-6), [우아한테크코스 백엔드 미션 - 블랙잭](https://github.com/woowacourse/java-blackjack)을 모티브로 제작되었습니다.
 
 ## 유의사항
 
@@ -92,7 +92,7 @@ Phase 2. _최초 분배_
 
 ```
 플레이어가 받은 카드는 7클로버, A하트입니다.
-딜러가 공개한 카드는 8스페이드, 2하트입니다.
+딜러가 받은 카드는 8스페이드, 2하트입니다.
 ```
 
 Phase 3. _플레이어 동작_
@@ -227,3 +227,5 @@ Phase 6. _게임 재개_
 - `index.js`를 수정하지 마세요. `npm run build`, `npm run start`를 차례대로 입력하여 프로그램을 번들 및 실행할 수 있습니다.
 - 프로그램 종료 시 `process.exit()`을 호출하지 마세요.
 - `__tests__` 폴더에 기작성된 테스트 코드를 모두 통과해야 합니다. `npm run test`를 입력하여 테스트할 수 있습니다.
+  - 해당 테스트를 모두 통과한 것을 [yopark.dev@gmail.com](mailto:yopark.dev@gmail.com)로 인증해주세요.
+  - 간소화된 블랙잭 룰을 벗어난 추가 구현을 하는 경우에는, 더 이상 테스트를 신경쓰지 않으셔도 됩니다.
